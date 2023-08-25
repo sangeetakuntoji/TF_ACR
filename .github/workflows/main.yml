@@ -16,7 +16,7 @@ jobs:
       ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
       
     runs-on: ubuntu-latest
-    environment: production
+    environment: development
  
     defaults:
       run:
