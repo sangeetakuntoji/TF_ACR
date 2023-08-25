@@ -36,10 +36,5 @@ resource "azurerm_app_service" "webapp" {
   location            = var.location
   resource_group_name = "${var.name}-rg"
   app_service_plan_id = azurerm_app_service_plan.appplan.id
-  app_settings = {
-    DOCKER_REGISTRY_SERVER_URL          = azurerm_container_registry.registry.0.login_server
-    DOCKER_REGISTRY_SERVER_USERNAME     = azurerm_container_registry.registry.0.admin_username
-    DOCKER_REGISTRY_SERVER_PASSWORD     = azurerm_container_registry.registry.0.admin_password
-    WEBSITES_ENABLE_APP_SERVICE_STORAGE = false
-  }
+  
 }
