@@ -1,4 +1,4 @@
-name: 'Terraform'
+name: 'Terraform_ACRInfra'
  
 on:
   push:
