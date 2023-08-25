@@ -1,4 +1,4 @@
-name: Terraform_dockerwebappinfra 
+name: Terraform_dockerwebapp_infra 
 
 on:
   workflow_dispatch:
