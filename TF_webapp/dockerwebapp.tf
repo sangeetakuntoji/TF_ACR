@@ -42,3 +42,4 @@ resource "azurerm_app_service" "webapp" {
     DOCKER_REGISTRY_SERVER_PASSWORD     = azurerm_container_registry.registry.0.admin_password
     WEBSITES_ENABLE_APP_SERVICE_STORAGE = false
   }
+}
