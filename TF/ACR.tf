@@ -48,10 +48,10 @@ resource "azurerm_app_service" "webapp" {
   resource_group_name = azurerm_resource_group.acr_resource_group.name
   location            = azurerm_resource_group.acr_resource_group.location
   app_service_plan_id = azurerm_app_service_plan.appplan.id
-  
-    app_settings = {
-    DOCKER_REGISTRY_SERVER_URL          = azurerm_container_registry.acr.login_server
-    DOCKER_REGISTRY_SERVER_USERNAME     = azurerm_container_registry.acr.admin_username
-    DOCKER_REGISTRY_SERVER_PASSWORD     = azurerm_container_registry.acr.admin_password
+
+  app_settings = {
+    DOCKER_REGISTRY_SERVER_URL      = azurerm_container_registry.acr.login_server
+    DOCKER_REGISTRY_SERVER_USERNAME = azurerm_container_registry.acr.admin_username
+    DOCKER_REGISTRY_SERVER_PASSWORD = azurerm_container_registry.acr.admin_password
   }
 }
