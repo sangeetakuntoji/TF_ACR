@@ -1,2 +1,0 @@
-name     = "devlopment"
-location = "uksouth"

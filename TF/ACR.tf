@@ -31,3 +31,22 @@ resource "azurerm_container_registry" "acr" {
   sku                 = "Standard"
   admin_enabled       = true
 }
+
+resource "azurerm_app_service_plan" "appplan" {
+  name                = "${var.name}-appserviceplan"
+  resource_group_name = azurerm_resource_group.acr_resource_group.name
+  location            = azurerm_resource_group.acr_resource_group.location
+  kind                = "Linux"
+  reserved            = true # required for Linux plans, might need to be in a properties thing
+  sku {
+    tier = "Standard"
+    size = "S1"
+  }
+}
+resource "azurerm_app_service" "webapp" {
+  name                = "${var.name}appservice001"
+  resource_group_name = azurerm_resource_group.acr_resource_group.name
+  location            = azurerm_resource_group.acr_resource_group.location
+  app_service_plan_id = azurerm_app_service_plan.appplan.id
+  
+}
